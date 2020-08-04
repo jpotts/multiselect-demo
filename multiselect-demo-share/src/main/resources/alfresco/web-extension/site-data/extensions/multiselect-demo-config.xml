@@ -1,0 +1,42 @@
+<extension>
+  <modules>
+    <module>
+      <id>multiselect-demo-config</id>
+      <version>1.0</version>
+      <auto-deploy>true</auto-deploy>
+      <configurations>
+        <config evaluator="string-compare" condition="DocumentLibrary">
+          <multi-select>
+            <action type="action-link" id="onExampleAction" label="actions.example-action" />
+          </multi-select>
+        </config>
+        <config evaluator="string-compare" condition="DocLibActions">
+          <actions>
+            <action id="example-action" type="javascript" label="actions.example-action">
+              <param name="function">onActionSimpleRepoAction</param>
+              <permissions>
+                <permission allow="true">Write</permission>
+              </permissions>
+              <param name="action">example-action</param>
+              <param name="successMessage">message.example-action.success</param>
+              <param name="failureMessage">message.example-action.failure</param>
+            </action>
+          </actions>
+          <actionGroups>
+            <actionGroup id="document-browse">
+              <action index="500" id="example-action" />
+            </actionGroup>
+            <actionGroup id="document-details">
+              <action index="500" id="example-action" />
+            </actionGroup>
+          </actionGroups>
+        </config>
+        <config evaluator="string-compare" condition="DocLibCustom">
+          <dependencies>
+            <js src="resources/multi-select-demo-share/custom-actions.js" />
+          </dependencies>
+        </config>
+      </configurations>
+    </module>
+  </modules>
+</extension>

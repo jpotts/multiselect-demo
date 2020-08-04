@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Example Action Multiselect</shortname>
+    <description>Runs the example action for each selected node</description>
+    <url>/ecmarchitect/example-action-multi</url>
+    <authentication>user</authentication>
+    <format default="json"></format>
+    <family>ecmarchitect</family>
+</webscript>
