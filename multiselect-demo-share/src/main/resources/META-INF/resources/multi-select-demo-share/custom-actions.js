@@ -3,8 +3,8 @@
         YAHOO.Bubbling.fire("registerAction",
             {
                 actionName: "onExampleAction",
-                fn: function custom_DLTB_onExampleAction(assets, owner) {
-                    // Post the details of the nodeRefs to archive...
+                fn: function custom_DLTB_onExampleAction(assets) {
+                    // Post the list of selected items to a repo tier web script
                     Alfresco.util.Ajax.jsonPost(
                         {
                             url: Alfresco.constants.PROXY_URI + "ecmarchitect/example-action-multi",

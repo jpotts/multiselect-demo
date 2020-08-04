@@ -33,11 +33,11 @@ public class ExampleActionMulti extends DeclarativeWebScript {
         }
 
         try {
+            Action exampleAction = actionService.createAction("example-action");
             JSONArray dataObj = (JSONArray) content;
             for (int i = 0; i < dataObj.length(); i++) {
                 JSONObject obj = (JSONObject) dataObj.get(i);
                 NodeRef nodeRef = new NodeRef((String) obj.get("nodeRef"));
-                Action exampleAction = actionService.createAction("example-action");
                 if (nodeService.exists(nodeRef)) {
                     actionService.executeAction(exampleAction, nodeRef);
                 }
